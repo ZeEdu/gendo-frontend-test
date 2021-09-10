@@ -1,0 +1,22 @@
+.toolbar {
+  &__nav {
+    background-color: #24282e;
+    margin: 0;
+    padding: 8px 0;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    &__item {
+      margin-left: 4px;
+    }
+    &__title,
+    &__pageName {
+      color: #fff;
+      font-family: "Open Sans", sans-serif;
+    }
+
+    &__title {
+      font-weight: bold;
+    }
+  }
+}
