@@ -1,10 +1,5 @@
-<app-input-filter (queryEvent)="emitFilter($event)"></app-input-filter>
-
-<ng-container *ngIf="repoList">
-  <ng-container *ngFor="let repo of repoList">
-    <p>{{ repo.owner.login }}/{{ repo.name }}</p>
-    <p>{{ repo.description }}</p>
-    <p>{{ repo.forks_count }}</p>
-    <p>{{ repo.stargazers_count }}</p>
+<ng-container *ngIf="repos">
+  <ng-container *ngFor="let repo of repos">
+    <app-repo-item [repo]="repo" [repoType]="'user'"></app-repo-item>
   </ng-container>
 </ng-container>

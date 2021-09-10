@@ -1,0 +1,56 @@
+<article class="content" *ngIf="repo">
+  <a class="content__fullname" [href]="repo.html_url" target="_blank">
+    <span *ngIf="repoType === 'starred'" class="content__owner"
+      >{{ repo.owner.login }} /</span
+    >
+    <span class="content__repoName"> {{ repo.name }}</span>
+  </a>
+  <p class="content__description">{{ repo.description }}</p>
+  <div class="content__socialWrapper">
+    <ng-container *ngIf="repoType === 'user'">
+      <div class="content__socialInteraction" *ngIf="repo.language">
+        <img
+          class="content__icon"
+          src="assets/code.svg"
+          alt="repo forks count"
+        />
+        <p class="content__language">
+          {{ repo.language }}
+        </p>
+      </div>
+      <div *ngIf="repo.forks_count > 0" class="content__socialInteraction">
+        <img
+          class="content__icon"
+          src="assets/repo-forked.svg"
+          alt="repo forks count"
+        />
+        <p class="content__forkCount">
+          {{ repo.forks_count }}
+        </p>
+      </div>
+    </ng-container>
+
+    <ng-container *ngIf="repoType === 'starred'">
+      <div *ngIf="repo.stargazers_count > 0" class="content__socialInteraction">
+        <img
+          class="content__icon"
+          src="assets/star-fill.svg"
+          alt="stargazers count"
+        />
+        <p class="content__starCount">
+          {{ repo.stargazers_count }}
+        </p>
+      </div>
+      <div *ngIf="repo.forks_count > 0" class="content__socialInteraction">
+        <img
+          class="content__icon"
+          src="assets/repo-forked.svg"
+          alt="repo forks count"
+        />
+        <p class="content__forkCount">
+          {{ repo.forks_count }}
+        </p>
+      </div>
+    </ng-container>
+  </div>
+</article>

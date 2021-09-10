@@ -1,16 +1,35 @@
-<button (click)="handleClick('repos')">
-  Repos <span *ngIf="userRepos$ | async as repos">{{ repos.length }}</span>
-</button>
-<button (click)="handleClick('starred')">
-  Starred <span *ngIf="starredRepos$ | async as repos">{{ repos.length }}</span>
-</button>
+<div class="tabBar">
+  <button
+    class="tabBar__button"
+    [ngClass]="{ 'tabBar__button--active': tabBar === 'repos' }"
+    (click)="handleClick('repos')"
+  >
+    Repos
+    <span *ngIf="userRepoList as repos" class="tabBar__repoCount">{{
+      repos.length
+    }}</span>
+  </button>
+  <button
+    class="tabBar__button"
+    [ngClass]="{ 'tabBar__button--active': tabBar === 'starred' }"
+    (click)="handleClick('starred')"
+  >
+    Starred
+    <span *ngIf="starredRepoList as repos" class="tabBar__repoCount">
+      {{ repos.length }}</span
+    >
+  </button>
+</div>
+
+<app-input-filter (queryEvent)="handleQueryEmitter($event)"></app-input-filter>
+
 <ng-container *ngIf="tabBar === 'repos'">
-  <ng-container *ngIf="userRepos$ | async as repo">
+  <ng-container *ngIf="repoList as repo">
     <app-user-repos [repos]="repo"></app-user-repos>
   </ng-container>
 </ng-container>
 <ng-container *ngIf="tabBar === 'starred'">
-  <ng-container *ngIf="starredRepos$ | async as starred">
+  <ng-container *ngIf="repoList as starred">
     <app-starred-repos [repos]="starred"></app-starred-repos>
   </ng-container>
 </ng-container>

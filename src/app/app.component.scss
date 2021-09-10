@@ -1,0 +1,17 @@
+main {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+@media (min-width: 992px) {
+  main {
+    flex-direction: row;
+    app-profile {
+      margin-right: 16px;
+    }
+    app-repos {
+      width: 100%;
+    }
+  }
+}

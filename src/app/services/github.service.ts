@@ -10,16 +10,16 @@ export class GithubService {
   constructor(private http: HttpClient) {}
 
   public getUser() {
-    return this.http.get<User>('https://api.github.com/users/octocat');
+    return this.http.get<User>('https://api.github.com/users/torvalds');
   }
 
   public getRepos() {
-    return this.http.get<Repo[]>('https://api.github.com/users/octocat/repos');
+    return this.http.get<Repo[]>('https://api.github.com/users/torvalds/repos');
   }
 
   public getStarredRepos() {
     return this.http.get<Repo[]>(
-      'https://api.github.com/users/octocat/starred'
+      'https://api.github.com/users/torvalds/starred'
     );
   }
 }

@@ -11,6 +11,7 @@ import { StarredReposComponent } from './components/starred-repos/starred-repos.
 import { InputFilterComponent } from './components/input-filter/input-filter.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { RepoItemComponent } from './components/repo-item/repo-item.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { FormsModule } from '@angular/forms';
     UserReposComponent,
     StarredReposComponent,
     InputFilterComponent,
+    RepoItemComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule],
   providers: [],

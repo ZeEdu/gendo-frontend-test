@@ -1,12 +1,19 @@
 <ng-container *ngIf="userProfile$ | async as user">
   <section class="profile">
-    <img
-      src="{{ user.avatar_url }}"
-      class="profile__image"
-      alt="{{ user.name }}"
-    />
-    <div class="profile_wrapper"></div>
-    <h1>{{ user.name }}</h1>
-    <p>{{ user.bio }}</p>
+    <div class="profile__imageWrapper">
+      <img
+        src="{{ user.avatar_url }}"
+        class="profile__image"
+        width="240"
+        height="240"
+        alt="{{ user.name }}"
+      />
+    </div>
+    <div class="profile__content">
+      <div class="profile__contentWrapper">
+        <h1 class="profile__name">{{ user.name }}</h1>
+        <p class="profile__bio">{{ user.bio }}</p>
+      </div>
+    </div>
   </section>
 </ng-container>
