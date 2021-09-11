@@ -18,7 +18,7 @@ git clone https://github.com/ZeEdu/gendo-frontend-test.git
 cd gendo-frontend-test
 ```
 
-3. Instale as dependencias
+3. Instale as dependências
 
 ```bash
 npm install
