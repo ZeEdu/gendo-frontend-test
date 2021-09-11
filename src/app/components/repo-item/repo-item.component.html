@@ -1,4 +1,4 @@
-<article class="content" *ngIf="repo">
+<article class="content animeLeft" *ngIf="repo">
   <a class="content__fullname" [href]="repo.html_url" target="_blank">
     <span *ngIf="repoType === 'starred'" class="content__owner"
       >{{ repo.owner.login }} /</span

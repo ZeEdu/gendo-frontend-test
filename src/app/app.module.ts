@@ -6,8 +6,7 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { ReposComponent } from './components/repos/repos.component';
-import { UserReposComponent } from './components/user-repos/user-repos.component';
-import { StarredReposComponent } from './components/starred-repos/starred-repos.component';
+
 import { InputFilterComponent } from './components/input-filter/input-filter.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
@@ -19,8 +18,6 @@ import { RepoItemComponent } from './components/repo-item/repo-item.component';
     HeaderComponent,
     ProfileComponent,
     ReposComponent,
-    UserReposComponent,
-    StarredReposComponent,
     InputFilterComponent,
     RepoItemComponent,
   ],

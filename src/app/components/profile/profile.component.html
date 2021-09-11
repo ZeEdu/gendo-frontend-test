@@ -1,5 +1,5 @@
-<ng-container *ngIf="userProfile$ | async as user">
-  <section class="profile">
+<section class="profile animeLeft">
+  <ng-container *ngIf="userProfile$ | async as user">
     <div class="profile__imageWrapper">
       <img
         src="{{ user.avatar_url }}"
@@ -11,9 +11,14 @@
     </div>
     <div class="profile__content">
       <div class="profile__contentWrapper">
-        <h1 class="profile__name">{{ user.name }}</h1>
-        <p class="profile__bio">{{ user.bio }}</p>
+        <h1 *ngIf="user.name" class="profile__name">{{ user.name }}</h1>
+        <p *ngIf="user.bio; else login" class="profile__bio">{{ user.bio }}</p>
+        <ng-template #login>
+          <p class="profile__bio">
+            {{ user.login }}
+          </p>
+        </ng-template>
       </div>
     </div>
-  </section>
-</ng-container>
+  </ng-container>
+</section>

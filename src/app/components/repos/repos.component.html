@@ -23,13 +23,17 @@
 
 <app-input-filter (queryEvent)="handleQueryEmitter($event)"></app-input-filter>
 
-<ng-container *ngIf="tabBar === 'repos'">
-  <ng-container *ngIf="repoList as repo">
-    <app-user-repos [repos]="repo"></app-user-repos>
-  </ng-container>
+<ng-container *ngIf="tabBar === 'repos' && repoList as repo">
+  <app-repo-item
+    *ngFor="let repo of repo"
+    [repo]="repo"
+    [repoType]="'user'"
+  ></app-repo-item>
 </ng-container>
-<ng-container *ngIf="tabBar === 'starred'">
-  <ng-container *ngIf="repoList as starred">
-    <app-starred-repos [repos]="starred"></app-starred-repos>
-  </ng-container>
+<ng-container *ngIf="tabBar === 'starred' && repoList as starred">
+  <app-repo-item
+    *ngFor="let repo of starred"
+    [repo]="repo"
+    [repoType]="'starred'"
+  ></app-repo-item>
 </ng-container>

@@ -7,7 +7,7 @@
 
   &__fullname {
     color: #0969da;
-    display: block;
+    display: inline-block;
     margin-bottom: 12px;
     text-decoration: none;
   }
@@ -23,6 +23,7 @@
     font-size: 14px;
     color: #586069;
     margin-bottom: 24px;
+    max-width: 520px;
   }
 
   &__socialWrapper {
@@ -34,6 +35,7 @@
   &__socialInteraction {
     display: flex;
     margin-right: 8px;
+    align-content: center;
   }
 
   &__starCount,
@@ -43,10 +45,11 @@
   }
 
   &__icon {
-    height: 16px;
-    margin: auto 8px auto 0;
+    height: 14px;
+    margin: auto 4px auto 0;
   }
 }
+
 @media (min-width: 992px) {
   .content {
     padding-left: 0;

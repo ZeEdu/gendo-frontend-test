@@ -1,7 +1,10 @@
 .profile {
   max-width: 100%;
-  padding: 24px 16px;
+  padding: 24px 32px;
   display: flex;
+  app-spinner {
+    margin: 24px auto;
+  }
   &__image {
     border-radius: 50%;
     width: 100%;
@@ -16,7 +19,7 @@
 
   &__name {
     font-family: "Open Sans", sans-serif;
-    font-size: 14px;
+    font-size: 20px;
     font-weight: bold;
     color: #24282e;
     margin: 0;
