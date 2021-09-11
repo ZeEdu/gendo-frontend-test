@@ -31,4 +31,7 @@ ng serve
 ```
 
 5. Por padrão, o projeto pode ser acesso em http://localhost:4200
-6. O projeto também pode ser encontrado em
+
+## Observações
+
+- O projeto também pode ser encontrado em https://gendo-frontend-test.vercel.app/
